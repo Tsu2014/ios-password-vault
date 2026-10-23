@@ -2,7 +2,7 @@ import SwiftUI
 
 @MainActor
 struct RootView: View {
-    @StateObject private var repository = VaultRepository()
+    @StateObject private var repository = VaultRepository.shared
     @StateObject private var vault = VaultViewModel()
     @StateObject private var lock = AppLock()
     @StateObject private var settings = AppSettings.shared

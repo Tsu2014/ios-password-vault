@@ -5,6 +5,7 @@
 	};
 	objectVersion = 56;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		AA0000000000000000000002 /* KeyVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000001 /* KeyVaultApp.swift */; };
 		AA0000000000000000000004 /* PasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000003 /* PasswordItem.swift */; };
@@ -24,6 +25,9 @@
 		AA0000000000000000000032 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000031 /* SettingsView.swift */; };
 		AA0000000000000000000034 /* VaultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000033 /* VaultListView.swift */; };
 		AA0000000000000000000036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000035 /* Assets.xcassets */; };
+		AA0000000000000000000060 /* LanHTTPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000061 /* LanHTTPServer.swift */; };
+		AA0000000000000000000062 /* ShareHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000063 /* ShareHTML.swift */; };
+		AA0000000000000000000064 /* ShareServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000065 /* ShareServer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +50,20 @@
 		AA0000000000000000000033 /* VaultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultListView.swift; sourceTree = "<group>"; };
 		AA0000000000000000000035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA0000000000000000000046 /* KeyVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000000000000000000061 /* LanHTTPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanHTTPServer.swift; sourceTree = "<group>"; };
+		AA0000000000000000000063 /* ShareHTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareHTML.swift; sourceTree = "<group>"; };
+		AA0000000000000000000065 /* ShareServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareServer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA0000000000000000000050 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		AA0000000000000000000037 = {
@@ -87,6 +104,9 @@
 				AA0000000000000000000011 /* KeychainStore.swift */,
 				AA0000000000000000000013 /* PasswordGenerator.swift */,
 				AA0000000000000000000015 /* VaultRepository.swift */,
+				AA0000000000000000000061 /* LanHTTPServer.swift */,
+				AA0000000000000000000063 /* ShareHTML.swift */,
+				AA0000000000000000000065 /* ShareServer.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -215,6 +235,9 @@
 				AA0000000000000000000012 /* KeychainStore.swift in Sources */,
 				AA0000000000000000000014 /* PasswordGenerator.swift in Sources */,
 				AA0000000000000000000016 /* VaultRepository.swift in Sources */,
+				AA0000000000000000000060 /* LanHTTPServer.swift in Sources */,
+				AA0000000000000000000062 /* ShareHTML.swift in Sources */,
+				AA0000000000000000000064 /* ShareServer.swift in Sources */,
 				AA0000000000000000000018 /* VaultViewModel.swift in Sources */,
 				AA0000000000000000000020 /* CopyableRow.swift in Sources */,
 				AA0000000000000000000022 /* ToastOverlay.swift in Sources */,
@@ -229,65 +252,55 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		AA0000000000000000000050 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
 /* Begin XCBuildConfiguration section */
 		AA0000000000000000000052 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-			ALWAYS_SEARCH_USER_PATHS = NO;
-			CLANG_ANALYZER_NONNULL = YES;
-			CLANG_ENABLE_MODULES = YES;
-			CLANG_ENABLE_OBJC_ARC = YES;
-			COPY_PHASE_STRIP = NO;
-			ENABLE_STRICT_OBJC_MSGSEND = YES;
-			GCC_C_LANGUAGE_STANDARD = gnu17;
-			GCC_NO_COMMON_BLOCKS = YES;
-			IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-			SDKROOT = iphoneos;
-			SWIFT_VERSION = 5.0;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		AA0000000000000000000053 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-			ALWAYS_SEARCH_USER_PATHS = NO;
-			CLANG_ANALYZER_NONNULL = YES;
-			CLANG_ENABLE_MODULES = YES;
-			CLANG_ENABLE_OBJC_ARC = YES;
-			COPY_PHASE_STRIP = NO;
-			ENABLE_STRICT_OBJC_MSGSEND = YES;
-			GCC_C_LANGUAGE_STANDARD = gnu17;
-			GCC_NO_COMMON_BLOCKS = YES;
-			IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-			SDKROOT = iphoneos;
-			SWIFT_VERSION = 5.0;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -295,58 +308,62 @@
 		AA0000000000000000000054 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-			ASSETSCATALOG_COMPILER_APPICON_NAME = AppIcon;
-			ASSETSCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-			CODE_SIGN_STYLE = Automatic;
-			CURRENT_PROJECT_VERSION = 1;
-			GENERATE_INFOPLIST_FILE = YES;
-			INFOPLIST_KEY_NSFaceIDUsageDescription = "用于解锁密码管家，保护你的密码数据";
-			INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-			INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-			INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-			INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-			INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-			IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-			LD_RUNPATH_SEARCH_PATHS = (
-				"$(inherited)",
-				"@executable_path/Frameworks",
-			);
-			MARKETING_VERSION = 1.0;
-			PRODUCT_BUNDLE_IDENTIFIER = com.tsu2014.KeyVault;
-			PRODUCT_NAME = "$(TARGET_NAME)";
-			SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-			SWIFT_EMIT_LOC_STRINGS = YES;
-			SWIFT_VERSION = 5.0;
-			TARGETED_DEVICE_FAMILY = "1,2";
+				ASSETSCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETSCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K57JWBZ42S;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "用于解锁密码管家，保护你的密码数据";
+			INFOPLIST_KEY_NSLocalNetworkUsageDescription = "用于在同一局域网内接收电脑上传的密码记录";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsu2014.KeyVault;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		AA0000000000000000000055 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-			ASSETSCATALOG_COMPILER_APPICON_NAME = AppIcon;
-			ASSETSCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-			CODE_SIGN_STYLE = Automatic;
-			CURRENT_PROJECT_VERSION = 1;
-			GENERATE_INFOPLIST_FILE = YES;
-			INFOPLIST_KEY_NSFaceIDUsageDescription = "用于解锁密码管家，保护你的密码数据";
-			INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-			INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-			INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-			INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-			INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-			IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-			LD_RUNPATH_SEARCH_PATHS = (
-				"$(inherited)",
-				"@executable_path/Frameworks",
-			);
-			MARKETING_VERSION = 1.0;
-			PRODUCT_BUNDLE_IDENTIFIER = com.tsu2014.KeyVault;
-			PRODUCT_NAME = "$(TARGET_NAME)";
-			SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-			SWIFT_EMIT_LOC_STRINGS = YES;
-			SWIFT_VERSION = 5.0;
-			TARGETED_DEVICE_FAMILY = "1,2";
+				ASSETSCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETSCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K57JWBZ42S;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "用于解锁密码管家，保护你的密码数据";
+			INFOPLIST_KEY_NSLocalNetworkUsageDescription = "用于在同一局域网内接收电脑上传的密码记录";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsu2014.KeyVault;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -372,7 +389,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
 	};
 	rootObject = AA0000000000000000000048 /* Project object */;
 }

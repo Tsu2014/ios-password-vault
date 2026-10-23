@@ -6,6 +6,7 @@ struct SettingsView: View {
     @EnvironmentObject private var clipboard: ClipboardManager
 
     @State private var showingDeleteAll = false
+    @StateObject private var share = ShareServer.shared
 
     var body: some View {
         Form {
@@ -34,6 +35,50 @@ struct SettingsView: View {
                 Text("剪贴板")
             } footer: {
                 Text("复制密码后自动清空剪贴板，避免密码长时间留在系统剪贴板中被其它 App 读取。")
+            }
+
+            Section {
+                Toggle("允许电脑上传数据", isOn: Binding(
+                    get: { share.isRunning },
+                    set: { turnOn in
+                        if turnOn {
+                            share.start()
+                        } else {
+                            share.stop()
+                        }
+                    }
+                ))
+
+                if share.isRunning {
+                    if let urlString = share.shareURLString {
+                        LabeledContent("访问地址") {
+                            Text(urlString)
+                                .font(.system(.footnote, design: .monospaced))
+                                .foregroundStyle(Color.accentColor)
+                        }
+                        LabeledContent("端口号", value: "\(share.port)")
+                        Button {
+                            clipboard.copy(urlString, label: "访问地址")
+                        } label: {
+                            Label("复制访问地址", systemImage: "doc.on.doc")
+                        }
+                    } else {
+                        LabeledContent("访问地址") {
+                            Text("未获取到 IP，请检查 Wi-Fi")
+                                .foregroundStyle(.orange)
+                        }
+                    }
+                }
+
+                if let error = share.lastError {
+                    Text(error)
+                        .font(.footnote)
+                        .foregroundStyle(.orange)
+                }
+            } header: {
+                Text("局域网上传")
+            } footer: {
+                Text("开启后，同一 Wi-Fi 下的电脑用浏览器打开访问地址，即可创建记录并直接保存到手机。传输仅限局域网；手机需保持 App 在前台。")
             }
 
             Section {

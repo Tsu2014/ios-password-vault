@@ -14,6 +14,9 @@
 - **剪贴板自动清空**：复制后 60 秒（可在设置中调整 10~300 秒）自动清空系统剪贴板，避免密码长期驻留
 - **Face ID / Touch ID 解锁**：可选，App 进入后台或冷启动时需验证身份
 - **安全存储**：所有数据以 JSON 形式写入系统 **钥匙串（Keychain）**，`kSecAttrAccessibleWhenUnlockedThisDeviceOnly`，仅保存在本设备、不上传、不同步 iCloud
+- **电脑上传（局域网）**：设置页开启「允许电脑上传数据」后，App 显示本机 IP 与端口（默认 8787），同一 Wi-Fi 下的 PC 用浏览器访问 `http://<手机IP>:8787`，即可在网页中填写并创建记录，保存后立即出现在手机 App 中；网页端不显示密码内容，另有生成随机密码按钮
+
+> 首次开启会触发系统的「本地网络」权限弹窗，请选择允许；使用期间手机需保持 App 在前台。
 
 ## 运行环境
 
@@ -33,6 +36,13 @@ open KeyVault.xcodeproj
 
 > 真机运行需要把 `Signing & Capabilities` 中的 Team 改成你自己的 Apple 账号（Bundle Identifier: `com.tsu2014.KeyVault`）。
 
+### 从电脑上传记录（局域网）
+
+1. 手机与电脑连接**同一个 Wi-Fi / 局域网**
+2. 手机打开 App →「设置」→ 开启「允许电脑上传数据」
+3. 电脑浏览器打开 App 显示的访问地址（例如 `http://192.168.1.5:8787`）
+4. 在网页表单中填写记录，点击「保存到手机」即可
+
 ## 目录结构
 
 ```
@@ -46,7 +56,10 @@ ios-password-vault/
 │   │   ├── AppSettings.swift           # 用户设置（UserDefaults）
 │   │   ├── ClipboardManager.swift      # 剪贴板复制与自动清空
 │   │   ├── KeychainStore.swift         # Keychain 读写封装
+│   │   ├── LanHTTPServer.swift         # 轻量 HTTP 服务器（Network.framework）
 │   │   ├── PasswordGenerator.swift     # 随机密码生成
+│   │   ├── ShareHTML.swift             # 电脑浏览器访问的上传网页
+│   │   ├── ShareServer.swift           # 局域网上传服务（路由 + 本机 IP）
 │   │   └── VaultRepository.swift       # 记录增删改查 + 持久化
 │   ├── ViewModels/
 │   │   └── VaultViewModel.swift        # 搜索与分组

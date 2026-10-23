@@ -3,6 +3,9 @@ import Foundation
 /// 密码仓库：负责记录的增删改查与持久化（底层写入 Keychain）。
 @MainActor
 final class VaultRepository: ObservableObject {
+    /// 全局共享实例（UI 与局域网共享服务共用同一份数据）
+    static let shared = VaultRepository()
+
     @Published private(set) var items: [PasswordItem] = []
     @Published var lastErrorMessage: String?
 
