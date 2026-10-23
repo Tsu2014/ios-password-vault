@@ -12,7 +12,7 @@ struct LockView: View {
                     .font(.system(size: 56))
                     .foregroundStyle(.tint)
 
-                Text("密码管家已锁定")
+                Text("私人管家已锁定")
                     .font(.title2.bold())
 
                 Text("验证身份后查看你的密码数据")

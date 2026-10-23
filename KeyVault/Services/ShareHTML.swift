@@ -8,7 +8,7 @@ enum ShareHTML {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>密码管家 · 从电脑上传</title>
+<title>私人管家 · 从电脑上传</title>
 <style>
   :root { color-scheme: light dark; }
   * { box-sizing: border-box; }
@@ -63,7 +63,7 @@ enum ShareHTML {
 <div class="wrap">
   <div class="card">
     <h1>从电脑上传密码记录</h1>
-    <p class="sub">填写完成后点击「保存到手机」，记录会立即写入密码管家并保存在手机钥匙串。</p>
+    <p class="sub">填写完成后点击「保存到手机」，记录会立即写入私人管家并保存在手机钥匙串。</p>
     <form id="form">
       <label>项目（必填）</label>
       <input id="project" placeholder="例如：GitHub" required>
@@ -109,7 +109,7 @@ enum ShareHTML {
     <div class="empty" id="empty">加载中…</div>
   </div>
 
-  <div class="empty" style="text-align:center">密码管家 · 局域网传输 · 数据保存在手机本机钥匙串</div>
+  <div class="empty" style="text-align:center">私人管家 · 局域网传输 · 数据保存在手机本机钥匙串</div>
 </div>
 <!--PART3-->
 <script>

@@ -314,6 +314,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K57JWBZ42S;
 				GENERATE_INFOPLIST_FILE = YES;
+			INFOPLIST_KEY_CFBundleDisplayName = "私人管家";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "用于解锁密码管家，保护你的密码数据";
 			INFOPLIST_KEY_NSLocalNetworkUsageDescription = "用于在同一局域网内接收电脑上传的密码记录";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -345,6 +346,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K57JWBZ42S;
 				GENERATE_INFOPLIST_FILE = YES;
+			INFOPLIST_KEY_CFBundleDisplayName = "私人管家";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "用于解锁密码管家，保护你的密码数据";
 			INFOPLIST_KEY_NSLocalNetworkUsageDescription = "用于在同一局域网内接收电脑上传的密码记录";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

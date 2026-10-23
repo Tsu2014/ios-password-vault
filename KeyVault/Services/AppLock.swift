@@ -45,7 +45,7 @@ final class AppLock: ObservableObject {
         do {
             let success = try await context.evaluatePolicy(
                 .deviceOwnerAuthentication,
-                localizedReason: "验证身份后打开密码管家"
+                localizedReason: "验证身份后打开私人管家"
             )
             isUnlocked = success
             if success { lastErrorMessage = nil }

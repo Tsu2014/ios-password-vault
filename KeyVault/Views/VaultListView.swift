@@ -80,7 +80,7 @@ struct VaultListView: View {
             }
         }
         .listStyle(.insetGrouped)
-        .navigationTitle("密码管家")
+        .navigationTitle("私人管家")
         .searchable(text: $vault.searchText, prompt: "搜索项目 / 用户名 / 备注")
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
