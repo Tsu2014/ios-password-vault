@@ -12,6 +12,7 @@ DerivedData/
 xcuserdata/
 *.xccheckout
 *.moved-aside
+KeyVault.xcodeproj/project.xcworkspace/
 *.xcuserstate
 *.xcscmblueprint
 *.hmap
